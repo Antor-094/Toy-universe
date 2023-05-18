@@ -2,6 +2,7 @@
 import { FaGithub, FaInstagram, FaFacebook, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
+  
   return (
     <footer className="bg-gray-800 text-white py-8 px-3">
       <div className="container mx-auto flex flex-wrap justify-between">
