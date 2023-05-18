@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 const Banner = () => { const [bannerIndex, setBannerIndex] = useState(0);
   const bannerImages = [
     "https://i.ibb.co/9pYJNFz/gimmel-magaway-4-E0u7-Vsf-Gms-unsplash.jpg",
-    
     "https://i.ibb.co/JpdScJ1/sandy-millar-nu-S2-GDp-CDo-I-unsplash.jpg",
     "https://i.ibb.co/kJjkmmq/gustavo-S-W9v-DL5wh-U-unsplash.jpg",
     "https://i.ibb.co/ftcb83k/mink-mingle-Riz1q-Apl-MQk-unsplash.jpg"
