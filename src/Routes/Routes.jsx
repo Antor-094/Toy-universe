@@ -6,6 +6,9 @@ import Home from "../Pages/Home/Home/Home";
 import Register from "../Pages/Register/Register";
 import NotFound from "../Pages/NotFound/NotFound";
 import Blog from "../Pages/Blog/Blog";
+
+import ToyDetails from "../Pages/ToyDetails/ToyDetails";
+import PrivateRoute from "./PrivateRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,6 +31,11 @@ const router = createBrowserRouter([
         path: "/blogs",
         element: <Blog></Blog>,
       },
+      {
+        path: "/toy/:id",
+        element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+      },
+     
     ],
   },
 ]);

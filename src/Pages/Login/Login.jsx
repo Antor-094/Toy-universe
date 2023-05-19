@@ -1,11 +1,14 @@
 import { useForm } from "react-hook-form";
-import { Link} from "react-router-dom";
+import { Link, useLocation, useNavigate} from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import Swal from "sweetalert2";
 const Login = () => {
   const { signIn,logInWithGoogle } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || "/";
   const {
     register,
     handleSubmit,
@@ -16,6 +19,7 @@ const Login = () => {
     signIn(data.email, data.password)
       .then((result) => {
         console.log(result.user);
+        navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
@@ -26,6 +30,7 @@ const Login = () => {
         logInWithGoogle()
           .then(() => {
             Swal.fire("Good job!", "You logged in your account", "success");
+            navigate(from, { replace: true });
             
           })
           .catch((e) => {

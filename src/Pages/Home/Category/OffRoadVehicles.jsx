@@ -1,7 +1,24 @@
 import { Rating } from "@smastrom/react-rating";
 
 import "@smastrom/react-rating/style.css";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 const OffRoadVehicles = ({ toy }) => {
+  const navigate = useNavigate()
+  const {user} = useContext(AuthContext)
+  const IsUserLoggedIn=()=>{
+    if(user){
+      navigate(`/toy/${toy.id}`)
+    }else{
+      Swal.fire({
+        icon: "error",
+        text: "You have to login first",
+      });
+      navigate(`/toy/${toy.id}`);
+    }
+    }
   return (
     <div>
        <div className="card md:w-[350px] border border-[#65799b] py-4 bglate-100 text-neutral font-serif shadow-lg rounded-lg">
@@ -16,9 +33,9 @@ const OffRoadVehicles = ({ toy }) => {
       <Rating style={{ maxWidth: 100 }} value={toy.rating} readOnly />
     </p>
     <div className="card-actions flex justify-end">
-      <button className="btn btn-outline normal-case text-[#65799b] hover:bg-[#65799b] hover:text-white transition-colors duration-300">
-        View Details
-      </button>
+    <button onClick={IsUserLoggedIn}  className="btn btn-outline normal-case text-[#65799b] hover:bg-[#65799b] hover:text-white transition-colors duration-300">
+              View Details
+            </button>
     </div>
   </div>
 </div>
