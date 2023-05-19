@@ -19,10 +19,18 @@ const Login = () => {
     signIn(data.email, data.password)
       .then((result) => {
         console.log(result.user);
+         Swal.fire({
+          icon:'success',
+          text:'user logged successfully!!'
+        })
         navigate(from, { replace: true });
       })
       .catch((error) => {
         console.log(error);
+          Swal.fire({
+          icon:'error',
+          text:`${error.message}`
+        })
       });
       
   };
