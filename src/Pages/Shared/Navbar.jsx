@@ -1,13 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
+const {user} = useContext(AuthContext)
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  const user = true;
+ 
   return (
     <nav className="flex items-center justify-between flex-wrap bg-[#e2eff1] p-6">
       <div className="flex items-center flex-shrink-0 text-black mr-6">
@@ -108,10 +109,10 @@ const Navbar = () => {
             <>
               <div
                 className="flex tooltip   tooltip-bottom items-center"
-                data-tip="hello"
+                data-tip={user.displayName}
               >
                 <img
-                  src="https://i.ibb.co/Wchzp9q/OIG.png"
+                  src={user.photoURL}
                   alt="User Profile"
                   className="h-14 w-14 mr-2 rounded-md"
                 />
