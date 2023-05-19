@@ -4,7 +4,7 @@ import "@smastrom/react-rating/style.css";
 const OffRoadVehicles = ({ toy }) => {
   return (
     <div>
-       <div className="card md:w-[275px] border border-[#65799b] py-4 bglate-100 text-neutral font-serif shadow-lg rounded-lg">
+       <div className="card md:w-[350px] border border-[#65799b] py-4 bglate-100 text-neutral font-serif shadow-lg rounded-lg">
   <figure className="px-2 pt-2">
     <img src={toy.image} alt="" className="rounded-t-lg h-48 w-full object-cover" />
   </figure>
