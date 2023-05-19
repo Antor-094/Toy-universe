@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Lamborghini Aventador",
+    "image": "https://i.ibb.co/1721F3X/Yellow-Die-cast-Toy.webp",
+    "price": 19.99,
+    "rating": 4.5,
+    "category": "SportsCars"
+  },
+  {
+    "id": 2,
+    "name": "Ferrari 458 Italia",
+    "image": "https://i.ibb.co/gWCHX84/pexels-mike-bird-102977.jpg",
+    "price": 14.99,
+    "rating": 4.2,
+    "category": "SportsCars"
+  },
+  {
+    "id": 3,
+    "name": "Land Rover Defender",
+    "image": "https://i.ibb.co/Tv8yVrX/Fullscreen-capture-2182021-23732-PM-87920.jpg",
+    "price": 9.99,
+    "rating": 4.8,
+    "category": "OffRoadVehicles"
+  },
+  {
+    "id": 4,
+    "name": "Ford F-150 Raptor",
+    "image": "https://i.ibb.co/xF65H6P/Yellow-and-Black-Muscle-Car.webp",
+    "price": 24.99,
+    "rating": 4.6,
+    "category": "OffRoadVehicles"
+  },
+  {
+    "id": 5,
+    "name": "Fire Truck",
+    "image": "https://i.ibb.co/0s5ZGQn/New-Design-24-V-Kids-Fire-Truck-Ride-on-Car-Toy.jpg",
+    "price": 29.99,
+    "rating": 4.9,
+    "category": "EmergencyVehicles"
+  },
+  {
+    "id": 6,
+    "name": "Police car",
+    "image": "https://i.ibb.co/kmskdbK/blacks-tobbi-kid-cars-th17t0638-64-600.webp",
+    "price": 12.99,
+    "rating": 4.4,
+    "category": "EmergencyVehicles"
+  }
+]
