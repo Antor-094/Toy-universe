@@ -4,7 +4,18 @@ import "react-tabs/style/react-tabs.css";
 import SportsCars from "./SportsCars";
 import OffRoadVehicles from "./OffRoadVehicles.jsx";
 import EmergencyVehicles from "./EmergencyVehicles";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Category = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000, 
+      easing: "ease-in-out",
+      delay: 200, 
+      offset: 120
+    });
+  }, []);
   const [toys, setToys] = useState([]);
   useEffect(() => {
     fetch("category.json")
@@ -20,7 +31,7 @@ const Category = () => {
   );
   // console.log(SportsCars);
   return (
-    <Tabs className="mt-20 w-[80%] mx-auto"> 
+    <Tabs className="mt-20 w-[80%] mx-auto" data-aos="zoom-in-up"> 
       <TabList className="text-center text-neutral border">
         <Tab>SportsCars</Tab>
         <Tab>OffRoadVehicles</Tab>

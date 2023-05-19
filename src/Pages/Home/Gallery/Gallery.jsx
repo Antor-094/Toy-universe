@@ -2,8 +2,19 @@
 // import GalleryImg from "./GalleryImg";
 
 import GalleryImg from "./GalleryImg";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Gallery = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, 
+      easing: "ease-in-out",
+      delay: 300, 
+      offset: 120
+    });
+  }, []);
   const images = [
     {
       id: 1,
@@ -46,7 +57,7 @@ const Gallery = () => {
   return (
     <div className="container mx-auto my-12 p-2 bg-[#65799b] border-2 border-gray-300 shadow-lg">
   <h2 className="text-4xl font-bold mb-5 text-center text-white uppercase tracking-wider">Car Toy Gallery</h2>
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+  <div data-aos="zoom-in-up" className="grid grid-cols-1 md:grid-cols-3 gap-3">
     {images.map(image => {
       return <GalleryImg key={image.id} image={image} />;
     })}
