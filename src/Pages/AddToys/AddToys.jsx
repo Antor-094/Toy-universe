@@ -1,6 +1,8 @@
 import { useForm } from "react-hook-form";
+import useTitle from "../../Hooks/useTitle";
 
 const AddToy = () => {
+    useTitle('AddToy')
   const { register, handleSubmit, formState: { errors } } = useForm();
 
   const onSubmit = (data) => {

@@ -1,6 +1,8 @@
 import { useParams, useLoaderData } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const ToyDetails = () => {
+    useTitle('ToyDetails')
   const { id } = useParams();
   const toys = useLoaderData();
   const toy = toys.find((item) => item.id == id);

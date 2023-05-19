@@ -2,8 +2,10 @@ import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../Provider/AuthProvider";
+import useTitle from "../../Hooks/useTitle";
 
 const AllToys = () => {
+    useTitle('AllToy')
   const [toys, setToys] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate()

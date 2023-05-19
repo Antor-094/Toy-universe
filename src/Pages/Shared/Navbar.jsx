@@ -17,13 +17,13 @@ const {user,logOut} = useContext(AuthContext)
         <img
           src="https://i.ibb.co/DD38jf7/logo.png"
           alt="Website Logo"
-          className="h-8 w-8 mr-2 rounded-md"
+          className="h-14 w-14 mr-2 rounded-md"
         />
         <Link
           to="/"
-          className="font-semibold text-xl tracking-tight hover:bg-[#b6d5e1] transition duration-300 ease-in-out"
+          className="font-semibold text-xl tracking-tight hover:bg-[#b6d5e1] transition duration-300 ease-in-out py-2 px-4 rounded-md"
         >
-          Toytopia
+          Toy Universe
         </Link>
       </div>
       <div className="block lg:hidden">

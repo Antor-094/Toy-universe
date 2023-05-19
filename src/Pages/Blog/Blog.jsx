@@ -1,5 +1,8 @@
+import useTitle from "../../Hooks/useTitle";
+
 /* eslint-disable react/no-unescaped-entities */
 const Blog = () => {
+  useTitle('Blog')
   return (
     <div className="p-2 md:w-[70%] mx-auto grid grid-cols-1 gap-3">
       <div className="card w-full bg-base-100 shadow-xl">
