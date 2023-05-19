@@ -110,7 +110,7 @@ const {user,logOut} = useContext(AuthContext)
           {user ? (
             <>
               <div
-                className="flex tooltip   tooltip-left items-center"
+                className="flex tooltip sm:tooltip-left tooltip-top items-center"
                 data-tip={user.displayName}
               >
                 <img

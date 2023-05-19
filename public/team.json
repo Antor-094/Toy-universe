@@ -1,0 +1,46 @@
+{
+    "team": [
+    {
+    "id": 1,
+    "name": "Emily Thompson",
+    "role": "Website Manager",
+    "description": "Ensures user-friendly website experience. Expertise in web development and design",
+    "image": "https://i.ibb.co/P45h4SK/pexels-andrea-piacquadio-3768911.jpg"
+    },
+    {
+    "id": 2,
+    "name": "Michael Ramirez",
+    "role": "Product Specialist",
+    "description": "Michael is our knowledgeable product specialist who curates our selection of car toys.",
+    "image": "https://i.ibb.co/2FHzDfd/pexels-dinielle-de-veyra-4195342.jpg"
+    },
+    {
+    "id": 3,
+    "name": "Sarah Collins",
+    "role": "Customer Support Representative",
+    "description": "Sarah is our friendly customer support representative, always ready to assist you. ",
+    "image": "https://i.ibb.co/Ss8JM9Z/pexels-karolina-grabowska-4467687.jpg"
+    },
+    {
+    "id": 4,
+    "name": "David Anderson",
+    "role": "Marketing Coordinator",
+    "description": "David is our creative marketing coordinator, responsible for spreading the word about our fantastic car toy offerings. ",
+    "image": "https://i.ibb.co/ThTR50G/pexels-andrea-piacquadio-3760373.jpg"
+    },
+    {
+    "id": 5,
+    "name": "Jessica Lopez",
+    "role": "Social Media Manager",
+    "description": "Jessica is our talented social media manager, responsible for engaging our community of car toy lovers through various platforms.",
+    "image": "https://i.ibb.co/F3XbxKr/pexels-andrea-piacquadio-3756678.jpg"
+    },
+    {
+    "id": 6,
+    "name": "Robert Johnson",
+    "role": "Logistics Coordinator",
+    "description": "Robert is our efficient logistics coordinator, ensuring that your orders are processed smoothly and delivered promptly.",
+    "image": "https://i.ibb.co/7nBW8GN/pexels-andrea-piacquadio-3771089.jpg"
+    }
+    ]
+    }
