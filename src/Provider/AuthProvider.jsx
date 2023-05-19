@@ -1,8 +1,9 @@
 import {
-   
+    
     createUserWithEmailAndPassword,
     getAuth,
     onAuthStateChanged,
+    signInWithEmailAndPassword,
     
     updateProfile,
   } from "firebase/auth";
@@ -12,7 +13,7 @@ import app from "../firebase/firebase.config";
   
   export const AuthContext = createContext();
   const auth = getAuth(app);
-
+  
   const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -21,7 +22,10 @@ import app from "../firebase/firebase.config";
       setLoading(true);
       return createUserWithEmailAndPassword(auth, email, password);
     };
-   
+    const signIn = (email, password) => {
+      setLoading(true);
+      return signInWithEmailAndPassword(auth, email, password);
+    };
     const updateProf = (name, photo) => {
       setLoading(true);
       return updateProfile(auth.currentUser, {
@@ -29,7 +33,7 @@ import app from "../firebase/firebase.config";
         photoURL: photo,
       });
     };
-
+   
     useEffect(() => {
       const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
         setUser(loggedUser);
@@ -43,6 +47,7 @@ import app from "../firebase/firebase.config";
       user,
       loading,
       createUser,
+      signIn,
       updateProf,
       
     };

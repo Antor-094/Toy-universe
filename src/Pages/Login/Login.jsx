@@ -1,13 +1,25 @@
 import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 const Login = () => {
+  const { signIn } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    signIn(data.email, data.password)
+      .then((result) => {
+        console.log(result.user);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
   return (
     <div className="min-h-screen bg-slate-50 md:p-10 p-3 md:flex justify-center items-center">
       <form
