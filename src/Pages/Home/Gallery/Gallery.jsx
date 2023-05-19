@@ -37,21 +37,23 @@ const Gallery = () => {
     },
     {
       id: 6,
-      src: 'https://i.ibb.co/GTDD5S4/Yellow-Hummer-Suv.jpg',
-      alt: 'Yellow-Hummer-Sub',
-      name:"Yellow-Hummer-hub"
+      src: 'https://i.ibb.co/xF65H6P/Yellow-and-Black-Muscle-Car.webp',
+      alt: 'Yellow and black muscle car',
+      name:"Yellow and black muscle car"
     },
   ];
 
   return (
-    <div className="container mx-auto my-12">
-      <h2 className="text-4xl font-bold mb-5 text-center text-[#65799b]">Gallery</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-        {images.map(image => {
-          return <GalleryImg key={image.id} image={image} />;
-        })}
-      </div>
-    </div>
+    <div className="container mx-auto my-12 p-2 bg-[#65799b] border-2 border-gray-300 shadow-lg">
+  <h2 className="text-4xl font-bold mb-5 text-center text-white uppercase tracking-wider">Car Toy Gallery</h2>
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+    {images.map(image => {
+      return <GalleryImg key={image.id} image={image} />;
+    })}
+  </div>
+</div>
+
+
   );
 };
 
