@@ -8,15 +8,15 @@ import Swal from "sweetalert2";
 const OffRoadVehicles = ({ toy }) => {
   const navigate = useNavigate()
   const {user} = useContext(AuthContext)
-  const IsUserLoggedIn=()=>{
+  const IsUserLoggedIn=(id)=>{
     if(user){
-      navigate(`/toy/${toy.id}`)
+      navigate(`/toy/${id}`)
     }else{
       Swal.fire({
         icon: "error",
         text: "You have to login first",
       });
-      navigate(`/toy/${toy.id}`);
+      navigate(`/toy/${id}`);
     }
     }
   return (
@@ -33,7 +33,7 @@ const OffRoadVehicles = ({ toy }) => {
       <Rating style={{ maxWidth: 100 }} value={toy.rating} readOnly />
     </p>
     <div className="card-actions flex justify-end">
-    <button onClick={IsUserLoggedIn}  className="btn btn-outline normal-case text-[#65799b] hover:bg-[#65799b] hover:text-white transition-colors duration-300">
+    <button onClick={()=>IsUserLoggedIn(toy.id)}  className="btn btn-outline normal-case text-[#65799b] hover:bg-[#65799b] hover:text-white transition-colors duration-300">
               View Details
             </button>
     </div>

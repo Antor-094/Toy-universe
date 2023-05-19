@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 const Blog = () => {
   return (
-    <div className="p-2 grid grid-cols-1 gap-3">
+    <div className="p-2 md:w-[70%] mx-auto grid grid-cols-1 gap-3">
       <div className="card w-full bg-base-100 shadow-xl">
         <div className="card-body">
           <h2 className="card-title">

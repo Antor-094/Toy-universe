@@ -5,7 +5,11 @@
     "image": "https://i.ibb.co/1721F3X/Yellow-Die-cast-Toy.webp",
     "price": 19.99,
     "rating": 4.5,
-    "category": "SportsCars"
+    "category": "SportsCars",
+    "seller": "Antor",
+    "seller_email": "antor@gmail.com",
+    "quantity": 10,
+    "description": "The Lamborghini Aventador is a high-performance sports car known for its sleek design and powerful engine. It's a popular choice among car enthusiasts."
   },
   {
     "id": 2,
@@ -13,7 +17,11 @@
     "image": "https://i.ibb.co/gWCHX84/pexels-mike-bird-102977.jpg",
     "price": 14.99,
     "rating": 4.2,
-    "category": "SportsCars"
+    "category": "SportsCars",
+    "seller": "Antor",
+    "seller_email": "antor@gmail.com",
+    "quantity": 8,
+    "description": "The Ferrari 458 Italia is a stunning sports car that combines elegance and performance. It's known for its exceptional handling and powerful engine."
   },
   {
     "id": 3,
@@ -21,7 +29,11 @@
     "image": "https://i.ibb.co/Tv8yVrX/Fullscreen-capture-2182021-23732-PM-87920.jpg",
     "price": 9.99,
     "rating": 4.8,
-    "category": "OffRoadVehicles"
+    "category": "OffRoadVehicles",
+    "seller": "Antor",
+    "seller_email": "antor@gmail.com",
+    "quantity": 15,
+    "description": "The Land Rover Defender is a rugged off-road vehicle built for adventure. It's known for its durability, versatility, and off-road capabilities."
   },
   {
     "id": 4,
@@ -29,7 +41,11 @@
     "image": "https://i.ibb.co/xF65H6P/Yellow-and-Black-Muscle-Car.webp",
     "price": 24.99,
     "rating": 4.6,
-    "category": "OffRoadVehicles"
+    "category": "OffRoadVehicles",
+    "seller": "Antor",
+    "seller_email": "antor@gmail.com",
+    "quantity": 5,
+    "description": "The Ford F-150 Raptor is a powerful pickup truck designed for off-road performance. It features a robust suspension, advanced off-road technologies, and a commanding presence."
   },
   {
     "id": 5,
@@ -37,7 +53,11 @@
     "image": "https://i.ibb.co/0s5ZGQn/New-Design-24-V-Kids-Fire-Truck-Ride-on-Car-Toy.jpg",
     "price": 29.99,
     "rating": 4.9,
-    "category": "EmergencyVehicles"
+    "category": "EmergencyVehicles",
+    "seller": "Antor",
+    "seller_email": "antor@gmail.com",
+    "quantity": 12,
+    "description": "The Fire Truck is an essential emergency vehicle used by firefighters to extinguish fires and provide rescue services. It's equipped with special firefighting equipment and tools."
   },
   {
     "id": 6,
@@ -45,6 +65,10 @@
     "image": "https://i.ibb.co/kmskdbK/blacks-tobbi-kid-cars-th17t0638-64-600.webp",
     "price": 12.99,
     "rating": 4.4,
-    "category": "EmergencyVehicles"
+    "category": "EmergencyVehicles",
+    "seller": "Antor",
+    "seller_email": "antor@gmail.com",
+    "quantity": 6,
+    "description": "The Police car is a law enforcement vehicle used by police departments to maintain law and order. It's equipped with sirens, lights, and other necessary equipment for police operations."
   }
 ]

@@ -4,7 +4,7 @@ const SinglePerson = ({ team }) => {
   const { image, name, role, description } = team;
 
   return (
-    <div className="card md:w-[400px] bg-base-100 shadow-xl hover:shadow-2xl transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
+    <div className="card md:w-[400px] bg-base-100 shadow-xl hover:shadow-2xl ">
       <figure className="px-10 pt-10">
         <img src={image} alt="Team Member" className="rounded-xl w-full h-[300px]" />
       </figure>

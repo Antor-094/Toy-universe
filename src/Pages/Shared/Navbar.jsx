@@ -54,7 +54,7 @@ const {user,logOut} = useContext(AuthContext)
             Home
           </Link>
           <Link
-            to="/all-toys"
+            to="/allToys"
             className="block mt-4 lg:inline-block lg:mt-0 font-semibold text-black mr-4 hover:bg-[#b6d5e1] transition duration-300 ease-in-out py-2 px-4 rounded-md"
           >
             All Toys
@@ -62,13 +62,13 @@ const {user,logOut} = useContext(AuthContext)
           {user ? (
             <>
               <Link
-                to="/my-toys"
+                to="/myToys"
                 className="block mt-4 lg:inline-block lg:mt-0 font-semibold text-black mr-4 hover:bg-[#b6d5e1] transition duration-300 ease-in-out py-2 px-4 rounded-md"
               >
                 My Toys
               </Link>
               <Link
-                to="/add-toy"
+                to="/addToys"
                 className="block mt-4 lg:inline-block lg:mt-0 font-semibold text-black mr-4 hover:bg-[#b6d5e1] transition-300 ease-in-out py-2 px-4 rounded-md"
               >
                 Add A Toy
