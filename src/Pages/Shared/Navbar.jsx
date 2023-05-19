@@ -4,11 +4,13 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-const {user} = useContext(AuthContext)
+const {user,logOut} = useContext(AuthContext)
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
- 
+ const handleLogOut =()=>{
+     logOut()
+ }
   return (
     <nav className="flex items-center justify-between flex-wrap bg-[#e2eff1] p-6">
       <div className="flex items-center flex-shrink-0 text-black mr-6">
@@ -90,7 +92,7 @@ const {user} = useContext(AuthContext)
                   to="/"
                   className="block mt-4 lg:inline-block lg:mt-0 font-semibold text-black mr-4 hover:bg-[#b6d5e1] transition duration-300 ease-in-out py-2 px-4 rounded-md"
                 >
-                  <button>Logout</button>
+                  <button onClick={handleLogOut}>Logout</button>
                 </Link>
               </>
             ) : (

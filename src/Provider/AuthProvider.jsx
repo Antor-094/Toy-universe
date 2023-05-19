@@ -1,10 +1,11 @@
 import {
-    
+    GoogleAuthProvider,
     createUserWithEmailAndPassword,
     getAuth,
     onAuthStateChanged,
     signInWithEmailAndPassword,
-    
+    signInWithPopup,
+    signOut,
     updateProfile,
   } from "firebase/auth";
 
@@ -13,7 +14,7 @@ import app from "../firebase/firebase.config";
   
   export const AuthContext = createContext();
   const auth = getAuth(app);
-  
+  const googleProvider = new GoogleAuthProvider();
   const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -33,7 +34,12 @@ import app from "../firebase/firebase.config";
         photoURL: photo,
       });
     };
-   
+    const logInWithGoogle = () => {
+      return signInWithPopup(auth, googleProvider);
+    };
+    const logOut = () => {
+      signOut(auth);
+    };
     useEffect(() => {
       const unSubscribe = onAuthStateChanged(auth, (loggedUser) => {
         setUser(loggedUser);
@@ -49,7 +55,8 @@ import app from "../firebase/firebase.config";
       createUser,
       signIn,
       updateProf,
-      
+      logInWithGoogle,
+      logOut,
     };
     return (
       <div>

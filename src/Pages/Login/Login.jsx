@@ -1,10 +1,11 @@
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 const Login = () => {
-  const { signIn } = useContext(AuthContext);
+  const { signIn,logInWithGoogle } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -19,7 +20,22 @@ const Login = () => {
       .catch((error) => {
         console.log(error);
       });
+      
   };
+  const handleLogInGoogle = () => {
+        logInWithGoogle()
+          .then(() => {
+            Swal.fire("Good job!", "You logged in your account", "success");
+            
+          })
+          .catch((e) => {
+            return Swal.fire({
+              icon: "error",
+              title: "Oops...",
+              text: `${e.message}`,
+            });
+          });
+      };
   return (
     <div className="min-h-screen bg-slate-50 md:p-10 p-3 md:flex justify-center items-center">
       <form
@@ -63,7 +79,7 @@ const Login = () => {
         </div>
         <div className="divider"></div>
         <div className="">
-          <button className="btn justify-between w-full normal-case btn-outline hover:bg-[#555273]">
+          <button onClick={handleLogInGoogle} className="btn justify-between w-full normal-case btn-outline hover:bg-[#555273]">
             Log in with Google <FaGoogle />
           </button>
         </div>
