@@ -49,6 +49,7 @@ const router = createBrowserRouter([
       {
         path: "/toy/:id",
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
+        loader:()=> fetch('category.json')
       },
      
     ],
