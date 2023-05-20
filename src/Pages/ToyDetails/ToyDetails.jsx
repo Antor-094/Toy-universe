@@ -19,9 +19,9 @@ const ToyDetails = () => {
   } = toy;
 
   return (
-    <div className="container p-2 md:w-[60%] mx-auto my-8">
+    <div className="container min-h-[350px] p-2 md:w-[60%] mx-auto my-8">
       <div className="flex flex-col md:flex-row items-center gap-x-7">
-        <img src={image} alt={name} className="w-64 h-64 mb-4" />
+        <img src={image} alt={name} className="w-72 h-72 mb-4" />
         <div className="flex flex-col">
           <h2 className="text-3xl font-bold mb-2">{name}</h2>
           <p className="text-gray-600 mb-2">Seller: {seller}</p>

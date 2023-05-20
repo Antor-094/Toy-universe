@@ -29,7 +29,7 @@ const UpdateToy = () => {
   };
   const onSubmit = (data) => {
     console.log(data);
-    fetch(`http://localhost:5000/allToys/${_id}`, {
+    fetch(`https://toy-universe-server-liart.vercel.app/allToys/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

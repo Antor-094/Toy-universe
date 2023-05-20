@@ -32,7 +32,7 @@ const AddToy = () => {
   };
   const onSubmit = (data) => {
     console.log(data);
-    fetch('http://localhost:5000/allToys', {
+    fetch('https://toy-universe-server-liart.vercel.app/allToys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

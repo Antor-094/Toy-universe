@@ -50,12 +50,12 @@ const router = createBrowserRouter([
       {
         path: "/toy/:id",
         element: <PrivateRoute><ToyDetails></ToyDetails></PrivateRoute>,
-        loader:()=> fetch('http://localhost:5000/allToy')
+        loader:()=> fetch('https://toy-universe-server-liart.vercel.app/allToy')
       },
       {
         path: 'updateToy/:id', 
         element: <UpdateToy></UpdateToy>, 
-        loader: ({params}) => fetch(`http://localhost:5000/allToys/${params.id}`)
+        loader: ({params}) => fetch(`https://toy-universe-server-liart.vercel.app/allToys/${params.id}`)
       }
      
     ],

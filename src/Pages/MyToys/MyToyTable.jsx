@@ -1,3 +1,4 @@
+import { FaTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const MyToyTable = ({ car, handleDelete }) => {
@@ -14,7 +15,7 @@ const MyToyTable = ({ car, handleDelete }) => {
       </td>
       <td className="py-2 px-4 border-b">
         <button onClick={()=>handleDelete(_id)} className="py-2 px-3 text-white font-bold rounded-sm hover:bg-[#555273] bg-[#65799b] border-b">
-          delete
+          <FaTrashAlt></FaTrashAlt>
         </button>
       </td>
       <td className="py-2 px-4 border-b">

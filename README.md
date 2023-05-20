@@ -1,10 +1,10 @@
 # Toy Universe
 
-This is a full-stack Toy Marketplace website focused on [insert your chosen toy category]. The website allows users to browse and purchase toys, as well as add their own toys for sale.
+This is a full-stack Toy Marketplace website focused on car toy. The website allows users to browse and purchase toys, as well as add their own toys for sale.
 
 ## Live Website
 
-You can access the live version of the website [here](insert live website link).
+You can access the live version of the website [here](https://toy-universe-56b72.web.app/).
 
 ## Features
 
@@ -24,11 +24,11 @@ You can access the live version of the website [here](insert live website link).
 - Backend: Node.js, Express.js
 - Database: MongoDB
 - Authentication: Firebase Authentication
-- Other Libraries: [List any additional libraries or packages you have used]
+
 
 ## Installation
 
-1. Clone the repository: `git clone [repository-url]`
+1. Clone the repository: `git clone [https://github.com/programming-hero-web-course-4/b7a11-toy-marketplace-client-side-Antor-094.git]`
 2. Install the dependencies:
    - For the client-side:
      ```bash
@@ -57,8 +57,8 @@ Contributions are welcome! If you find any bugs or want to suggest improvements,
 
 ## Contact
 
-[Your Name]
-- Website: [Your Website]
-- Email: [Your Email]
+[MD.OLI ULLAH ANTOR]
+- Website: [https://toy-universe-56b72.web.app/]
+- Email: [mdantor556677889@gmail.com]
 - LinkedIn: [Your LinkedIn]
 - Twitter: [Your Twitter]

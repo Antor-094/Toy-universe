@@ -10,57 +10,72 @@ import "aos/dist/aos.css";
 const Category = () => {
   useEffect(() => {
     AOS.init({
-      duration: 1000, 
+      duration: 1000,
       easing: "ease-in-out",
-      delay: 200, 
-      offset: 120
+      delay: 200,
+      offset: 120,
     });
   }, []);
+
   const [toys, setToys] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/allToy")
+    fetch("https://toy-universe-server-liart.vercel.app/allToy")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
       });
   }, []);
-  const SportsCarToys = toys.filter((toy) => toy.category == "SportsCars");
-  const OffRoadVehiclesToys = toys.filter((toy) => toy.category == "OffRoadVehicles");
-  const EmergencyVehiclesToys = toys.filter(
-    (toy) => toy.category == "EmergencyVehicles"
-  );
-  // console.log(SportsCars);
+
+  const toyComponents = {
+    SportsCars: SportsCars,
+    OffRoadVehicles: OffRoadVehicles,
+    EmergencyVehicles: EmergencyVehicles,
+  };
+
+  const [showAll, setShowAll] = useState(false);
+
+  const handleToggleShowAll = () => {
+    setShowAll(!showAll);
+  };
+
   return (
-    <Tabs className="mt-20 w-[80%] mx-auto min-h-[400px]" data-aos="zoom-in-up"> 
+    <div>
+      <h1 className="text-center font-bold text-3xl text-[#65799b]">See Toys By Category</h1>
+      <Tabs className="mt-20 w-[80%] mx-auto min-h-[400px]" data-aos="zoom-in-up">
       <TabList className="text-center text-neutral border">
-        <Tab>SportsCars</Tab>
-        <Tab>OffRoadVehicles</Tab>
-        <Tab>EmergencyVehicles</Tab>
+        {Object.keys(toyComponents).map((category) => (
+          <Tab key={category}>{category}</Tab>
+        ))}
       </TabList>
 
-      <TabPanel>
-        <div className="grid md:grid-cols-3 gap-3 justify-around mt-2">
-          {SportsCarToys.map((toy) => (
-            <SportsCars key={toy._id} toy={toy} />
-            
-          ))}
-        </div>
-      </TabPanel>
-      <TabPanel>
-        <div className="grid md:grid-cols-3 gap-3 justify-around mt-2">
-          {OffRoadVehiclesToys.map((toy) => (
-            <OffRoadVehicles key={toy._id} toy={toy} />
-          ))}
-        </div>
-      </TabPanel>
-      <TabPanel>
-        <div className="grid md:grid-cols-3 gap-3 justify-around mt-2">
-          {EmergencyVehiclesToys.map((toy) => (
-            <EmergencyVehicles key={toy._id} toy={toy} />
-          ))}
-        </div>
-      </TabPanel>
+      {Object.keys(toyComponents).map((category) => {
+        const filteredToys = toys.filter((toy) => toy.category === category);
+        const showLimited = showAll ? filteredToys.length : 3;
+        const displayedToys = filteredToys.slice(0, showLimited);
+
+        return (
+          <TabPanel key={category}>
+            <div className="grid md:grid-cols-3 gap-3 justify-around mt-2">
+              {displayedToys.map((toy) => {
+                const ToyComponent = toyComponents[category];
+                return <ToyComponent key={toy._id} toy={toy} />;
+              })}
+            </div>
+            {filteredToys.length > 3 && (
+              <div className="text-center mt-4">
+                <button
+                  className="text-white bg-[#65799b] hover:bg-[#555273] py-2 px-2 rounded-md"
+                  onClick={handleToggleShowAll}
+                >
+                  {showAll ? "See Less" : "See More"}
+                </button>
+              </div>
+            )}
+          </TabPanel>
+        );
+      })}
     </Tabs>
+    </div>
   );
 };
 

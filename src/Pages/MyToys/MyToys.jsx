@@ -11,7 +11,7 @@ const MyToys = () => {
   const [sortingOrder, setSortingOrder] = useState("ascending"); // State for sorting order
 
   useEffect(() => {
-    const url = `http://localhost:5000/allToy?email=${user?.email}&sortingOrder=${sortingOrder}`; // Include sortingOrder in the URL
+    const url = `https://toy-universe-server-liart.vercel.app/allToy?email=${user?.email}&sortingOrder=${sortingOrder}`; // Include sortingOrder in the URL
     fetch(url)
       .then((res) => res.json())
       .then((data) => {
@@ -23,7 +23,7 @@ const MyToys = () => {
   const handleDelete = (id) => {
     const proceed = confirm('Are you sure you want to delete?');
     if (proceed) {
-      fetch(`http://localhost:5000/allToys/${id}`, {
+      fetch(`https://toy-universe-server-liart.vercel.app/allToys/${id}`, {
         method: 'DELETE'
       })
       .then(res => res.json())
