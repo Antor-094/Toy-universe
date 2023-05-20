@@ -1,12 +1,56 @@
 import { useForm } from "react-hook-form";
 import useTitle from "../../Hooks/useTitle";
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
     useTitle('AddToy')
+    const{user}=useContext(AuthContext)
+    // console.log(user.displayName)
   const { register, handleSubmit, formState: { errors } } = useForm();
+  const ratingValidation = (value) => {
+    const parsedValue = parseFloat(value);
+    if (isNaN(parsedValue)) {
+      return "Please enter a valid rating";
+    }
+    if (parsedValue < 1 || parsedValue > 5) {
+      return "Rating must be between 1 and 5";
+    }
+    return true;
+  };
 
+  const priceValidation = (value) => {
+    const parsedValue = parseFloat(value);
+    if (isNaN(parsedValue)) {
+      return "Please enter a valid price";
+    }
+    if (parsedValue < 5 || parsedValue > 100) {
+      return "Price must be between 5 and 100";
+    }
+    return true;
+  };
   const onSubmit = (data) => {
     console.log(data);
+    fetch('http://localhost:5000/allToys', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if(data.insertedId){
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Car Added Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                      })
+                }
+            })
   };
 
   return (
@@ -24,27 +68,29 @@ const AddToy = () => {
         </div>
         <div className="mb-4">
           <label htmlFor="seller" className="block mb-2 text-[#65799b]">Seller Name</label>
-          <input type="text" id="seller" {...register("seller")} className="border border-gray-400 p-2 w-full text-[#555273]" />
+          <input type="text" readOnly defaultValue={user.displayName} id="seller" {...register("seller")} className="border border-gray-400 p-2 w-full text-[#555273]" />
         </div>
         <div className="mb-4">
           <label htmlFor="sellerEmail" className="block mb-2 text-[#65799b]">Seller Email</label>
-          <input type="email" id="sellerEmail" {...register("seller_email")} className="border border-gray-400 p-2 w-full text-[#555273]" />
+          <input type="email" readOnly defaultValue={user.email} id="sellerEmail" {...register("email")} className="border border-gray-400 p-2 w-full text-[#555273]" />
         </div>
         <div className="mb-4">
           <label htmlFor="subCategory" className="block mb-2 text-[#65799b]">Sub-category</label>
-          <select id="subCategory" {...register("sub_category")} className="border border-gray-400 p-2 w-full text-[#555273]">
-            <option value="Math Toys">Math Toys</option>
-            <option value="Language Toys">Language Toys</option>
-            <option value="Science Toys">Science Toys</option>
+          <select id="subCategory" {...register("category")} className="border border-gray-400 p-2 w-full text-[#555273]">
+            <option value="SportsCars">SportsCars</option>
+            <option value="OffRoadVehicles">OffRoadVehicles</option>
+            <option value="EmergencyVehicles">EmergencyVehicles</option>
           </select>
         </div>
         <div className="mb-4">
           <label htmlFor="price" className="block mb-2 text-[#65799b]">Price</label>
-          <input type="number" id="price" {...register("price")} className="border border-gray-400 p-2 w-full text-[#555273]" />
+          <input type="text" id="price" {...register("price", { required: true, validate: priceValidation })} className="border border-gray-400 p-2 w-full text-[#555273]" />
+          {errors.price && <span className="text-red-500">{errors.price.message}</span>}
         </div>
         <div className="mb-4 ">
           <label htmlFor="rating" className="block mb-2 text-[#65799b]">Rating</label>
-          <input type="number" id="rating" {...register("rating")} className="border border-gray-400 p-2 w-full text-[#555273]" />
+          <input type="text" id="rating" {...register("rating", { required: true, validate: ratingValidation })} className="border border-gray-400 p-2 w-full text-[#555273]" />
+          {errors.rating && <span className="text-red-500">{errors.rating.message}</span>}
         </div>
         <div className="mb-4">
           <label htmlFor="quantity" className="block mb-2 text-[#65799b]">Available Quantity</label>

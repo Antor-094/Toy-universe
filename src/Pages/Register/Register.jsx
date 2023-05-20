@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 import useTitle from "../../Hooks/useTitle";
 const Register = () => {
   useTitle('Register')
-  const { createUser, updateProf } = useContext(AuthContext);
+  const { createUser, updateProf ,setLoading} = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -24,10 +24,12 @@ const Register = () => {
       .then((result) => {
         updateProf(data.name, data.photoURL);
         console.log(result.user);
+        setLoading(false)
         return Swal.fire({
           icon:'success',
           text:'user Created successfully!!'
         })
+        
       })
       .catch((error) => {
         console.log(error);

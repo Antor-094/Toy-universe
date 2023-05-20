@@ -57,6 +57,7 @@ import app from "../firebase/firebase.config";
       updateProf,
       logInWithGoogle,
       logOut,
+      setLoading
     };
     return (
       <div>

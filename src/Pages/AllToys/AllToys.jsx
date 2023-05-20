@@ -10,19 +10,19 @@ const AllToys = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const navigate = useNavigate()
   const {user} = useContext(AuthContext)
-  const IsUserLoggedIn=(id)=>{
+  const IsUserLoggedIn=(_id)=>{
     if(user){
-      navigate(`/toy/${id}`)
+      navigate(`/toy/${_id}`)
     }else{
       Swal.fire({
         icon: "error",
         text: "You have to login first",
       });
-      navigate(`/toy/${id}`);
+      navigate(`/toy/${_id}`);
     }
     }
   useEffect(() => {
-    fetch("category.json")
+    fetch("http://localhost:5000/allToys")
       .then((response) => response.json())
       .then((data) => setToys(data))
       .catch((error) => console.log(error));
@@ -73,7 +73,7 @@ const AllToys = () => {
                 <td className="py-2 px-4 border-b">{toy.price}</td>
                 <td className="py-2 px-4 border-b">{toy.quantity}</td>
                 <td className="py-2 px-4 border-b">
-                  <button onClick={()=>IsUserLoggedIn(toy.id)} className="text-blue-500 font-medium">
+                  <button onClick={()=>IsUserLoggedIn(toy._id)} className="text-blue-500 font-medium">
                     View Details
                   </button>
                 </td>

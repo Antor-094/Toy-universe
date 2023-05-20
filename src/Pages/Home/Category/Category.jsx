@@ -18,7 +18,7 @@ const Category = () => {
   }, []);
   const [toys, setToys] = useState([]);
   useEffect(() => {
-    fetch("category.json")
+    fetch("http://localhost:5000/allToy")
       .then((res) => res.json())
       .then((data) => {
         setToys(data);
@@ -31,7 +31,7 @@ const Category = () => {
   );
   // console.log(SportsCars);
   return (
-    <Tabs className="mt-20 w-[80%] mx-auto" data-aos="zoom-in-up"> 
+    <Tabs className="mt-20 w-[80%] mx-auto min-h-[400px]" data-aos="zoom-in-up"> 
       <TabList className="text-center text-neutral border">
         <Tab>SportsCars</Tab>
         <Tab>OffRoadVehicles</Tab>
@@ -41,7 +41,7 @@ const Category = () => {
       <TabPanel>
         <div className="flex flex-wrap justify-around mt-2">
           {SportsCarToys.map((toy) => (
-            <SportsCars key={toy.id} toy={toy} />
+            <SportsCars key={toy._id} toy={toy} />
             
           ))}
         </div>
@@ -49,14 +49,14 @@ const Category = () => {
       <TabPanel>
         <div className="flex flex-wrap justify-around mt-2">
           {OffRoadVehiclesToys.map((toy) => (
-            <OffRoadVehicles key={toy.id} toy={toy} />
+            <OffRoadVehicles key={toy._id} toy={toy} />
           ))}
         </div>
       </TabPanel>
       <TabPanel>
         <div className="flex flex-wrap justify-around mt-2">
           {EmergencyVehiclesToys.map((toy) => (
-            <EmergencyVehicles key={toy.id} toy={toy} />
+            <EmergencyVehicles key={toy._id} toy={toy} />
           ))}
         </div>
       </TabPanel>
