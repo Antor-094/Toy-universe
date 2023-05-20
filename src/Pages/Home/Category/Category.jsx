@@ -39,7 +39,7 @@ const Category = () => {
       </TabList>
 
       <TabPanel>
-        <div className="flex flex-wrap justify-around mt-2">
+        <div className="grid md:grid-cols-3 gap-3 justify-around mt-2">
           {SportsCarToys.map((toy) => (
             <SportsCars key={toy._id} toy={toy} />
             
@@ -47,14 +47,14 @@ const Category = () => {
         </div>
       </TabPanel>
       <TabPanel>
-        <div className="flex flex-wrap justify-around mt-2">
+        <div className="grid md:grid-cols-3 gap-3 justify-around mt-2">
           {OffRoadVehiclesToys.map((toy) => (
             <OffRoadVehicles key={toy._id} toy={toy} />
           ))}
         </div>
       </TabPanel>
       <TabPanel>
-        <div className="flex flex-wrap justify-around mt-2">
+        <div className="grid md:grid-cols-3 gap-3 justify-around mt-2">
           {EmergencyVehiclesToys.map((toy) => (
             <EmergencyVehicles key={toy._id} toy={toy} />
           ))}

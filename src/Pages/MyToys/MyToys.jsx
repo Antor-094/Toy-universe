@@ -1,5 +1,3 @@
-// import React from 'react';
-
 import { useContext, useEffect, useState } from "react";
 import useTitle from "../../Hooks/useTitle";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -10,41 +8,59 @@ const MyToys = () => {
   useTitle("MyToy");
   const { user } = useContext(AuthContext);
   const [myCars, setMyCars] = useState([]);
-  console.log(user)
-//   const url = ;
+  const [sortingOrder, setSortingOrder] = useState("ascending"); // State for sorting order
+
   useEffect(() => {
-    fetch(`http://localhost:5000/allToy?email=${user?.email}`)
+    const url = `http://localhost:5000/allToy?email=${user?.email}&sortingOrder=${sortingOrder}`; // Include sortingOrder in the URL
+    fetch(url)
       .then((res) => res.json())
       .then((data) => {
         setMyCars(data);
         console.log(data);
       });
-  }, [user?.email]);
-  const handleDelete = id => {
-    const proceed = confirm('Are You sure you want to delete');
+  }, [user?.email, sortingOrder]); // Include sortingOrder as a dependency
+
+  const handleDelete = (id) => {
+    const proceed = confirm('Are you sure you want to delete?');
     if (proceed) {
-        fetch(`http://localhost:5000/allToys/${id}`, {
-            method: 'DELETE'
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
-                if (data.deletedCount > 0) {
-                    Swal.fire({
-                        title: 'Success!',
-                        text: 'toy deleted Successfully',
-                        icon: 'success',
-                        confirmButtonText: 'Cool'
-                      })
-                    const remaining = myCars.filter(cars => cars._id !== id);
-                    setMyCars(remaining);
-                }
-            })
+      fetch(`http://localhost:5000/allToys/${id}`, {
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          Swal.fire({
+            title: 'Success!',
+            text: 'Toy deleted successfully',
+            icon: 'success',
+            confirmButtonText: 'Cool'
+          });
+          const remaining = myCars.filter(cars => cars._id !== id);
+          setMyCars(remaining);
+        }
+      });
     }
-    
-}
+  };
+
+  const handleSortingOrderChange = (event) => {
+    const selectedSortingOrder = event.target.value;
+    setSortingOrder(selectedSortingOrder);
+  };
+
   return (
     <div className="overflow-x-auto">
+      <div className="sorting-container my-2  px-2 py-2">
+        <label htmlFor="sortingOrder" className="font-semibold">Sorting Order:</label>
+        <select
+          id="sortingOrder"
+          value={sortingOrder}
+          onChange={handleSortingOrderChange}
+        >
+          <option value="ascending" className="text-[#65799b]">Ascending</option>
+          <option value="descending" className="text-[#65799b]">Descending</option>
+        </select>
+      </div>
       <table className="min-w-full bg-white">
         <thead>
           <tr>
@@ -77,9 +93,13 @@ const MyToys = () => {
         <tbody>
           {myCars.map((car) =><MyToyTable key={car._id} car={car} handleDelete={handleDelete} ></MyToyTable> )}
         </tbody>
-      </table>
+      </table> 
     </div>
   );
 };
 
 export default MyToys;
+
+
+
+  
