@@ -56,7 +56,7 @@ const Gallery = () => {
 
   return (
     <div className="container mx-auto my-12 p-2 border-2 border-gray-300 shadow-lg">
-  <h2 className="text-4xl font-bold mb-5 text-center text-[#65799b] uppercase tracking-wider">Car Toy Gallery</h2>
+  <h2 className="text-4xl font-bold mb-5 text-center text-[#1F2937] uppercase tracking-wider">Car Toy Gallery</h2>
   <div data-aos="zoom-in-up" className="grid grid-cols-1 md:grid-cols-3 gap-3">
     {images.map(image => {
       return <GalleryImg key={image.id} image={image} />;

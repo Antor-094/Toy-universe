@@ -2,7 +2,7 @@
 
 const GalleryImg = ({image}) => {
     const {src,alt,name} = image
-    console.log(src,name,alt)
+    // console.log(src,name,alt)
     return (
         <div className="relative group rounded-lg overflow-hidden">
             <img src={src} alt={alt} className="w-full h-96 object-cover transition duration-500 ease-in-out transform group-hover:opacity-75 border-2 border-gray-300 shadow-lg" />

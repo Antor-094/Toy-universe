@@ -40,7 +40,7 @@ const Category = () => {
 
   return (
     <div>
-      <h1 className="text-center font-bold text-3xl text-[#65799b]">See Toys By Category</h1>
+      <h1 className="text-center font-bold text-3xl text-[#1F2937]">See Toys By Category</h1>
       <Tabs className="mt-20 w-[80%] mx-auto min-h-[400px]" data-aos="zoom-in-up">
       <TabList className="text-center text-neutral border">
         {Object.keys(toyComponents).map((category) => (
@@ -64,7 +64,7 @@ const Category = () => {
             {filteredToys.length > 3 && (
               <div className="text-center mt-4">
                 <button
-                  className="text-white bg-[#65799b] hover:bg-[#555273] py-2 px-2 rounded-md"
+                  className="text-white bg-[#1F2937] hover:bg-[#555273] py-2 px-2 rounded-md"
                   onClick={handleToggleShowAll}
                 >
                   {showAll ? "See Less" : "See More"}

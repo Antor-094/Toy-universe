@@ -58,40 +58,40 @@ const AllToys = () => {
         <table className="min-w-full bg-white">
           <thead>
             <tr>
-            <th className="py-2 px-4 border-b bg-[#65799b] text-white">
+            <th className="py-2 px-4 border-b bg-[#1F2937] text-white">
                 sl no
               </th>
-              <th className="py-2 px-4 border-b bg-[#65799b] text-white">
+              <th className="py-2 px-4 border-b bg-[#1F2937] text-white">
                 Seller
               </th>
-              <th className="py-2 px-4 border-b bg-[#65799b] text-white">
+              <th className="py-2 px-4 border-b bg-[#1F2937] text-white">
                 Toy Name
               </th>
-              <th className="py-2 px-4 border-b bg-[#65799b] text-white">
+              <th className="py-2 px-4 border-b bg-[#1F2937] text-white">
                 Sub-category
               </th>
-              <th className="py-2 px-4 border-b bg-[#65799b] text-white">
+              <th className="py-2 px-4 border-b bg-[#1F2937] text-white">
                 Price
               </th>
-              <th className="py-2 px-4 border-b bg-[#65799b] text-white">
+              <th className="py-2 px-4 border-b bg-[#1F2937] text-white">
                 Available Quantity
               </th>
-              <th className="py-2 px-4 border-b bg-[#65799b] text-white"></th>
+              <th className="py-2 px-4 border-b bg-[#1F2937] text-white"></th>
             </tr>
           </thead>
           <tbody>
             {filteredToys.map((toy,index) => (
               <tr className="text-center" key={toy.id}>
                 <td className="py-2 px-4 border-b">{index+1}</td>
-                <td className="py-2 px-4 border-b">{toy.seller}</td>
-                <td className="py-2 px-4 border-b">{toy.name}</td>
-                <td className="py-2 px-4 border-b">{toy.category}</td>
-                <td className="py-2 px-4 border-b">{toy.price}</td>
-                <td className="py-2 px-4 border-b">{toy.quantity}</td>
+                <td className="py-2 px-4 border-b">{toy?.seller}</td>
+                <td className="py-2 px-4 border-b">{toy?.name}</td>
+                <td className="py-2 px-4 border-b">{toy?.category}</td>
+                <td className="py-2 px-4 border-b">{toy?.price}</td>
+                <td className="py-2 px-4 border-b">{toy?.quantity}</td>
                 <td className="py-2 px-4 border-b">
                   <button
                     onClick={() => IsUserLoggedIn(toy._id)}
-                    className="text-[#65799b] font-medium"
+                    className="text-[#1F2937] font-medium"
                   >
                     View Details
                   </button>

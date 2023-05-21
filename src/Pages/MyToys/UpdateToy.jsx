@@ -10,7 +10,7 @@ import Swal from "sweetalert2";
 const UpdateToy = () => {
     const car = useLoaderData()
     const {_id,quantity,price,description} = car
-    // console.log(_id,quantity,price,description)
+    console.log(_id,quantity,price,description)
     useTitle('AddToy')
     
     // console.log(user.displayName)
@@ -28,7 +28,7 @@ const UpdateToy = () => {
     return true;
   };
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     fetch(`https://toy-universe-server-liart.vercel.app/allToys/${_id}`, {
             method: 'PUT',
             headers: {
@@ -38,7 +38,7 @@ const UpdateToy = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 if (data.modifiedCount > 0) {
                     Swal.fire({
                         title: 'Success!',
@@ -58,21 +58,21 @@ const UpdateToy = () => {
            
         
         <div className="mb-4">
-          <label htmlFor="price" className="block mb-2 text-[#65799b]">Price</label>
+          <label htmlFor="price" className="block mb-2 text-[#1F2937]">Price</label>
           <input type="text" defaultValue={price} id="price" {...register("price", { required: true, validate: priceValidation })} className="border border-gray-400 p-2 w-full text-[#555273]" />
           {errors.price && <span className="text-red-500">{errors.price.message}</span>}
         </div>
         
         <div className="mb-4">
-          <label htmlFor="quantity" className="block mb-2 text-[#65799b]">Available Quantity</label>
+          <label htmlFor="quantity" className="block mb-2 text-[#1F2937]">Available Quantity</label>
           <input type="number" defaultValue={quantity} id="quantity" {...register("quantity")} className="border border-gray-400 p-2 w-full text-[#555273]" />
         </div>
         <div className="mb-4 col-span-2">
-          <label htmlFor="description" className="block mb-2 text-[#65799b]">Detail Description</label>
+          <label htmlFor="description" className="block mb-2 text-[#1F2937]">Detail Description</label>
           <textarea defaultValue={description} id="description" {...register("description")} className="border border-gray-400 p-2 w-full h-24 resize-none text-[#555273]"></textarea>
         </div>
         <div className="col-span-2 text-center">
-          <button type="submit" className="btn font-bold hover:bg-[#65799b] w-full">Update Toy</button>
+          <button type="submit" className="btn font-bold hover:bg-[#1F2937] w-full">Update Toy</button>
         </div>
       </form>
     </div>

@@ -10,7 +10,7 @@ const TestimonialSection = () => {
       .then((res) => res.json())
       .then((data) => {
         setTeams(data.team);
-        console.log(teams)
+        // console.log(teams)
       });
   }, []);
   return (

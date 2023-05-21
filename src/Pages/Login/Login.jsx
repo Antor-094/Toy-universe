@@ -17,7 +17,7 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
-    console.log(data);
+    // console.log(data);
     signIn(data.email, data.password)
       .then((result) => {
         console.log(result.user);
@@ -87,7 +87,7 @@ const Login = () => {
         <div>
           <p className="">
             New at here?{" "}
-            <Link to="/register" className="link hover:text-[#65799b] text-[#65799bb4]">
+            <Link to="/register" className="link hover:text-[#1F2937] text-[#1F2937b4]">
               Register
             </Link>
           </p>

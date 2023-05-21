@@ -34,7 +34,7 @@ const Banner = () => { const [bannerIndex, setBannerIndex] = useState(0);
           <p className="mb-5">
             Welcome to Toy Universe, your one-stop-shop for the best toy cars in town. From classic muscle cars to futuristic race cars, we have something for every young driver. Let your imagination run wild and explore our collection of toy cars today!
           </p>
-          <button className="bg-[#65799b] hover:bg-[#555273] p-3 rounded font-bold">
+          <button className="bg-[#1F2937] hover:bg-[#555273] p-3 rounded font-bold">
             Shop Now
           </button>
         </div>

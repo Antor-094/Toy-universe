@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="w-full md:w-1/3 lg:w-1/4 mb-4 md:mb-0">
           <h3 className="text-lg font-bold mb-2">Contact Us</h3>
           <p className="text-gray-400">123 Main Stp </p>
-          <p className="text-gray-400">Anytown, USA 12345</p>
+          <p className="text-gray-400">New York, USA 12345</p>
           <p className="text-gray-400">Phone: 555-555-5555</p>
           <a href="mailto:info@toyuniverse.com" className="text-gray-400 flex items-center mt-2"><FaEnvelope className="mr-2" />info@toyuniverse.com</a>
           <form className="mt-4">
